@@ -1,0 +1,71 @@
+.header {
+  background: linear-gradient(135deg, #004E89 0%, #1A659E 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* NAVBAR MOVED TO RIGHT */
+.navbar {
+  margin-left: auto; /* <-- pushes nav to the right */
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem; /* spacing between Home & Students */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom-color: white;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,76 @@
+/* Student Component Styles */
+.student-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.student-info {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.student-name {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.student-detail {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.student-detail strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.delete-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.delete-btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .student-card {
+    padding: 1rem;
+  }
+
+  .student-name {
+    font-size: 1.1rem;
+  }
+
+  .delete-btn {
+    width: 100%;
+    align-self: stretch;
+  }
+}
