@@ -14,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/students" element={<Students />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
         <footer className="app-footer">
