@@ -7,6 +7,7 @@ const Students = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [newStudent, setNewStudent] = useState({ name: '', email: '', phone: '' });
+  const [formError, setFormError] = useState('');
   const [sortAsc, setSortAsc] = useState(true);
 
   useEffect(() => {
@@ -42,9 +43,17 @@ const Students = () => {
   };
 
   const handleAddStudent = () => {
+    setFormError('');
     if (!newStudent.name || !newStudent.email || !newStudent.phone) {
-      return alert('All fields are required!');
+      return setFormError('All fields are required!');
     }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newStudent.email)) {
+      return setFormError('Please enter a valid email address.');
+    }
+
     setStudents(prev => [
       ...prev,
       { id: Date.now(), ...newStudent }
@@ -136,6 +145,7 @@ const Students = () => {
         />
         <button style={styles.button} onClick={handleAddStudent}><FaPlus /> Add</button>
       </div>
+      {formError && <div style={{ color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
 
       {/* STATES */}
       {loading && <div>Loading student data...</div>}
